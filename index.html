@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Timeboxing Planner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="planner-container">
+        <header>
+            <h1><i class="fas fa-calendar-alt"></i> Daily Timeboxing Planner</h1>
+            <div class="date-picker">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date">
+            </div>
+        </header>
+        
+        <main>
+            <section class="priorities-section">
+                <div class="card">
+                    <h2><i class="fas fa-star"></i> Top Priorities</h2>
+                    <textarea id="top-priorities" rows="3" placeholder="Enter your top priorities here..."></textarea>
+                </div>
+                <div class="card">
+                    <h2><i class="fas fa-brain"></i> Brain Dump</h2>
+                    <textarea id="brain-dump" rows="5" placeholder="Write down any other thoughts or tasks here..."></textarea>
+                </div>
+            </section>
+            
+            <section class="task-list card">
+                <h2><i class="fas fa-tasks"></i> Tasks</h2>
+                <table class="task-table" id="task-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Task</th>
+                            <th>Done</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody id="task-tbody">
+                        <!-- Tasks will be added here dynamically -->
+                    </tbody>
+                </table>
+                <button id="add-task" class="btn"><i class="fas fa-plus"></i> Add Task</button>
+            </section>
+            
+            <section class="progress-section card">
+                <h2><i class="fas fa-chart-line"></i> Progress</h2>
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+                <p id="progress-text">0% Complete</p>
+            </section>
+            
+            <section class="summary card">
+                <h2><i class="fas fa-check-circle"></i> Completed Tasks</h2>
+                <ul id="completed-tasks">
+                    <!-- Completed tasks will be added here dynamically -->
+                </ul>
+            </section>
+        </main>
+        
+        <footer>
+            <button id="print-button" class="btn"><i class="fas fa-print"></i> Print Planner</button>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
