@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5a623;
+    --background-color: #f8f9fa;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --border-color: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.planner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.date-picker {
+    margin-bottom: 20px;
+}
+
+.date-picker input {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 200px;
+}
+
+.card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    resize: vertical;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.task-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.task-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 1em;
+    padding: 15px;
+    text-align: left;
+}
+
+.task-table td {
+    background-color: var(--card-background);
+    padding: 15px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.task-table td:first-child {
+    border-left: 1px solid var(--border-color);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.task-table td:last-child {
+    border-right: 1px solid var(--border-color);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #3a7bc8;
+    transform: translateY(-2px);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+#progress-fill {
+    height: 100%;
+    background-color: var(--secondary-color);
+    width: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.minus-sign {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.minus-sign:hover {
+    background-color: #cc0000;
+    transform: scale(1.1);
+}
+
+#completed-tasks {
+    list-style-type: none;
+}
+
+#completed-tasks li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1em;
+}
+
+#completed-tasks li:last-child {
+    border-bottom: none;
+}
+
+@media print {
+    .btn, .minus-sign {
+        display: none;
+    }
+    .planner-container {
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .planner-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .task-table {
+        font-size: 0.9em;
+    }
+
+    .task-table th, .task-table td {
+        padding: 10px;
+    }
+
+    .btn {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+
+    .minus-sign {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .planner-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .task-table {
+        font-size: 0.8em;
+    }
+
+    .task-table th, .task-table td {
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 0.8em;
+        padding: 8px 16px;
+    }
+
+    .minus-sign {
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+    }
+
+    .task-table input[type="time"], .task-table input[type="text"] {
+        font-size: 0.9em;
+        padding: 5px;
+        width: 100%;
+    }
+
+    .task-table td {
+        display: block;
+        text-align: left;
+        border: 1px solid var(--border-color);
+    }
+
+    .task-table thead {
+        display: none;
+    }
+
+    .task-table tr {
+        margin-bottom: 10px;
+        display: block;
+        border: 1px solid var(--border-color);
+        border-radius: 5px;
+    }
+
+    .task-table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .task-table td:last-child {
+        border-bottom: 0;
+    }
+}
